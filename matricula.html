@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <title>Matrícula</title>
+    <style type="text/css">
+        .usuario {
+            margin-bottom: 10px; 
+        }
+        .usuario h4 {
+            color: #ffffff;
+            display: inline; 
+            margin: 0 10px 0 0; 
+        }
+        .usuario input {
+            display: inline;
+            margin-right: 20px; 
+        }
+        .volver {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="formulario">
+    <a class="volver" href="index.html">Volver</a>
+    <h1>Matrícula</h1>
+    <form method="post" action="matricula.php" enctype="multipart/form-data">
+        <div class="usuario">
+            <h4>Nombre:</h4>
+            <input type="text" name="nombre_estudiante" required>
+            <h4>Apellido:</h4>
+            <input type="text" name="apellido_estudiante" required>
+            <h4>Correo Electrónico:</h4> 
+            <input type="email" name="correo_estudiante" required>
+        </div>
+        
+        <div class="usuario">
+            <h4>Documento de identidad estudiante:</h4>
+            <input type="file" name="doc_estudiante" required>
+        </div>
+
+        <div class="usuario">
+            <h4>Documento de identidad acudiente:</h4>
+            <input type="file" name="doc_acudiente" required>
+        </div>
+
+        <div class="usuario">
+            <h4>Historial médico:</h4>
+            <input type="file" name="historial_medico" required>
+        </div>
+
+        <div class="usuario">
+            <h4>Certificado Afiliación EPS:</h4>
+            <input type="file" name="certificado_eps" required>
+        </div>
+
+        <div class="usuario">
+            <h4>Certificado Escolar:</h4>
+            <input type="file" name="certificado_escolar" required>
+        </div>
+
+        <div class="usuario">
+            <h4>Foto:</h4>
+            <input type="file" name="foto" required>
+        </div>
+
+        <input type="submit" value="Subir Archivos">
+    </form>
+
+    <?php if ($mensaje): ?>
+        <p style='color: white;'><?= htmlspecialchars($mensaje) ?></p>
+    <?php endif; ?>
+</div>
+</body>
+</html>
